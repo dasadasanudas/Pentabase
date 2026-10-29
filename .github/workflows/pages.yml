@@ -1,0 +1,37 @@
+name: Deploy Pentabase
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble and verify application bundle
+        run: |
+          cat pentabase.part00 pentabase.part01 > /tmp/pentabase.zip
+          echo "a5290e52fb0684574292c314ed4e3bbc13f2b8df315f9cc70803ca51d4dcbb0b  /tmp/pentabase.zip" | sha256sum -c -
+          mkdir -p site
+          unzip -q /tmp/pentabase.zip -d site
+          touch site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
