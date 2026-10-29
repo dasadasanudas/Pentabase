@@ -22,6 +22,12 @@ jobs:
           mkdir -p site
           unzip -q /tmp/pentabase.zip -d site
           touch site/.nojekyll
+          cp -a site /tmp/sync-preview
+          cp supa-index.html /tmp/sync-preview/index.html
+          cp supa-shim.js /tmp/sync-preview/offline/shim.js
+          cp supa-sync.js /tmp/sync-preview/offline/supabase-sync.js
+          sed -i "s@/snapshots@/preview-snapshots@g" /tmp/sync-preview/offline/supabase-sync.js
+          mv /tmp/sync-preview site/sync-preview
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
