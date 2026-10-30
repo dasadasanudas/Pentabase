@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover"
+    />
+
+    <!-- Early theme bootstrap: set data-theme & background before first paint -->
+    <style>html{background-color:#f7f7f7;color-scheme:light}html[data-theme=dark]{background-color:#212121;color-scheme:dark}</style>
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('pentabaseTheme');
+          var isDark =
+            theme === 'dark' ||
+            (theme !== 'light' &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) {
+            document.documentElement.dataset.theme = 'dark';
+          }
+        } catch (error) {
+          console.error('Error getting theme from localStorage:', error);
+        }
+      })();
+    </script>
+
+    <meta
+      name="description"
+      content="Create visual playgrounds for your notes."
+    />
+    <title>Library</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' blob: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline' blob: data:; img-src 'self' blob: data:; media-src 'self' blob: data:; font-src 'self' data: blob:; connect-src 'self' blob: data: https://rieznphxjocdpynhiokv.supabase.co; worker-src 'self' blob:; frame-src 'self' blob: data: https://www.youtube.com https://www.youtube-nocookie.com https:; object-src 'none'">
+    
+
+    
+    <script src="./offline/shim.js"></script>
+    <script defer src="./offline/supabase-sync.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-C0FnF6B9.js">
+    <link rel="modulepreload" crossorigin href="./assets/uImageV-QYeyNOMk.js">
+    <link rel="modulepreload" crossorigin href="./assets/tslib.es6-B16JDj7i.js">
+    <link rel="modulepreload" crossorigin href="./assets/load-script-D68fGyre.js">
+    <link rel="modulepreload" crossorigin href="./assets/checkIsEmptyCardContent-DmY2dYmY.js">
+    <link rel="modulepreload" crossorigin href="./assets/classnames-CfLRLWYq.js">
+    <link rel="modulepreload" crossorigin href="./assets/selectCardContainerById-BGLYdW0v.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-B1Z7gEeU.js">
+    <link rel="modulepreload" crossorigin href="./assets/dist-B8PGOjgd.js">
+    <link rel="modulepreload" crossorigin href="./assets/mermaid-7ea9cbd6-B0-yno6w.js">
+    <link rel="modulepreload" crossorigin href="./assets/convertMarkdownToProseMirrorJsonNode-UYqaNtTZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/assets-CbtSGSyX.js">
+    <link rel="modulepreload" crossorigin href="./assets/ArrowLeftIcon-3vlz-eQ5.js">
+    <link rel="modulepreload" crossorigin href="./assets/updateObjectIdToFilenameMap-XwOE92vC.js">
+    <link rel="modulepreload" crossorigin href="./assets/buttons-BO85cKa4.js">
+    <link rel="modulepreload" crossorigin href="./assets/useOnceEffect-BokGwkaW.js">
+    <link rel="modulepreload" crossorigin href="./assets/Scrim-Nx12EzP-.js">
+    <link rel="modulepreload" crossorigin href="./assets/useLazyRef-D6fepc3I.js">
+    <link rel="modulepreload" crossorigin href="./assets/assets-BM1xbqU2.js">
+    <link rel="modulepreload" crossorigin href="./assets/Link-COwx2j6e.js">
+    <link rel="modulepreload" crossorigin href="./assets/redirectToExternalUrl-Cvv6DMJb.js">
+    <link rel="modulepreload" crossorigin href="./assets/openExternalUrl-CQf7QEy4.js">
+    <link rel="modulepreload" crossorigin href="./assets/findTagDataByName-7LmvejBd.js">
+    <link rel="modulepreload" crossorigin href="./assets/pdf-CMuo2niR.js">
+    <link rel="modulepreload" crossorigin href="./assets/FileSaver.min-qkA43t9p.js">
+    <link rel="modulepreload" crossorigin href="./assets/MobileEditor-CUilxWsd.js">
+    <link rel="modulepreload" crossorigin href="./assets/accountApi-BQYP53NY.js">
+    <link rel="modulepreload" crossorigin href="./assets/usePreventInteractionWhileLoading-1HQ_fMmw.js">
+    <link rel="modulepreload" crossorigin href="./assets/useSignOutAndCleanup-D-qAvCyR.js">
+    <link rel="modulepreload" crossorigin href="./assets/aiProviderCredentialApi-gAKgTdCG.js">
+    <link rel="modulepreload" crossorigin href="./assets/pentaLogoIcon-BGAeae-m.js">
+    <link rel="modulepreload" crossorigin href="./assets/useArray-CmwHIdII.js">
+    <link rel="modulepreload" crossorigin href="./assets/lessonPlansDataSliceSelectors-CjbhCWjz.js">
+    <link rel="modulepreload" crossorigin href="./assets/path-B_0haWDX.js">
+    <link rel="modulepreload" crossorigin href="./assets/array-BifhSqXX.js">
+    <link rel="modulepreload" crossorigin href="./assets/line-Cj4ttUwn.js">
+    <link rel="modulepreload" crossorigin href="./assets/mcpConnectorApi-r0W4J-Cl.js">
+    <link rel="modulepreload" crossorigin href="./assets/McpConnectorLogoIcon-BsLlQXA_.js">
+    <link rel="modulepreload" crossorigin href="./assets/PrimaryButton-iuIdqfWo.js">
+    <link rel="modulepreload" crossorigin href="./assets/useChangeAppTheme-BQde89Jg.js">
+    <link rel="stylesheet" crossorigin href="./assets/checkIsEmptyCardContent-BpnE8fMu.css">
+    <link rel="stylesheet" crossorigin href="./assets/useLazyRef-CHUnJx_J.css">
+    <link rel="stylesheet" crossorigin href="./assets/MobileEditor-CxLtZrIn.css">
+    <link rel="stylesheet" crossorigin href="./assets/useChangeAppTheme-CpEaI6of.css">
+    <link rel="stylesheet" crossorigin href="./assets/main-Cm6WiFWC.css">
+  </head>
+
+  <body>
+    <div id="root" class="no-print"></div>
+
+  </body>
+</html>
